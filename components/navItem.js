@@ -1,9 +1,11 @@
-export default function NavItem({ title }) {
+import Link from "next/link";
+
+export default function NavItem({ title, path }) {
   return (
     <li className="hover:bg-red-500 px-2 py-1 mx-2">
-    <a className="text-white" href="#">
-      {title}
-    </a>
-  </li>
-  )
+      <Link className="text-white" href={path}>
+        {title}
+      </Link>
+    </li>
+  );
 }
