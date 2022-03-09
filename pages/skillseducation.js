@@ -1,8 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
-import CourseItem from "../components/courseItem";
-import Footer from "../components/footer";
-import Navbar from "../components/navBar";
+import Layout from "../components/Layout";
+import CourseItem from "../components/CourseItem";
 
 const pStyles = "text-lg mb-1";
 const headingStyles = "text-2xl font-bold text-wrap";
@@ -38,6 +35,14 @@ const classes = [
     name: "CPSC 416",
     desc: "Distributed Systems",
   },
+  {
+    name: "CPSC 411",
+    desc: "Compiler Construction",
+  },
+  {
+    name: "CPSC 340",
+    desc: "Machine Learning",
+  },
 ];
 
 function buildClassesGrid() {
@@ -48,55 +53,46 @@ function buildClassesGrid() {
 
 export default function Skills() {
   return (
-    <>
-      <Head>
-        <title>Skills + Education</title>
-        <meta name="description" content="A personal portfolio website." />
-        <link rel="icon" href="./images/picrew-img.png" />
-      </Head>
-      <Navbar></Navbar>
-      <main className="mb-8 flex flex-col justify-center items-center">
-        <h1 className={titleStyles}>Skills</h1>
-        <section className="w-11/12 flex justify-center flex-wrap">
-          <div className={containerStyles}>
-            <h3 className={headingStyles}>Languages</h3>
-            <p className="text-lg">Java, Python, TypeScript, Go, HTML, CSS, C#</p>
-          </div>
-          <div className={containerStyles}>
-            <h3 className={headingStyles}>Dev Tools</h3>
-            <p className="text-lg">Git, JIRA, BitBucket, Azure DevOps, GitHub</p>
-          </div>
-          <div className={containerStyles}>
-            <h3 className={headingStyles}>Tools and Frameworks</h3>
-            <p className="text-lg">Bash, PL/SQL, MongoDB, React, Next.js</p>
-          </div>
-          <div className={containerStyles}>
-            <h3 className={headingStyles}>Editors/IDEs</h3>
-            <p className="text-lg">IntelliJ IDEA, Jupyter Notebook, Visual Studio Code, Visual Studio</p>
-          </div>
-        </section>
-        <h1 className={titleStyles}>Education</h1>
-        <section className="w-11/12 flex flex-wrap">
-          <div className="mr-6">
-            <h3 className="mb-4 text-3xl font-bold">Degree Info</h3>
-            <p className={pStyles}>
-              <strong className="text-red-500">B.Sc Honours in Computer Science</strong>
-            </p>
-            <p className={pStyles}>
-              <strong className="text-red-500">Date: </strong>2017-Present
-            </p>
-            <p className={pStyles}>
-              <strong className="text-red-500">Location: </strong>Vancouver, BC
-            </p>
-          </div>
+    <Layout>
+      <h1 className={titleStyles}>Skills</h1>
+      <section className="w-11/12 flex justify-center flex-wrap">
+        <div className={containerStyles}>
+          <h3 className={headingStyles}>Languages</h3>
+          <p className="text-lg">Java, Python, TypeScript, Go, HTML, CSS, C#</p>
+        </div>
+        <div className={containerStyles}>
+          <h3 className={headingStyles}>Dev Tools</h3>
+          <p className="text-lg">Git, JIRA, BitBucket, Azure DevOps, GitHub</p>
+        </div>
+        <div className={containerStyles}>
+          <h3 className={headingStyles}>Tools and Frameworks</h3>
+          <p className="text-lg">Bash, PL/SQL, MongoDB, React, Next.js</p>
+        </div>
+        <div className={containerStyles}>
+          <h3 className={headingStyles}>Editors/IDEs</h3>
+          <p className="text-lg">IntelliJ IDEA, Jupyter Notebook, Visual Studio Code, Visual Studio</p>
+        </div>
+      </section>
+      <h1 className={titleStyles}>Education</h1>
+      <section className="w-11/12 flex flex-wrap">
+        <div className="mr-6">
+          <h3 className="mb-4 text-3xl font-bold">Degree Info</h3>
+          <p className={pStyles}>
+            <strong className="text-red-500">B.Sc Honours in Computer Science</strong>
+          </p>
+          <p className={pStyles}>
+            <strong className="text-red-500">Date: </strong>2017-Present
+          </p>
+          <p className={pStyles}>
+            <strong className="text-red-500">Location: </strong>Vancouver, BC
+          </p>
+        </div>
 
-          <div className={containerStyles + " flex flex-col grow"}>
-            <h3 className={headingStyles + " mb-2"}>Relevant Courses</h3>
-            <div className="w-full grid grid-cols-3 gap-3">{buildClassesGrid()}</div>
-          </div>
-        </section>
-      </main>
-      <Footer></Footer>
-    </>
+        <div className={containerStyles + " flex flex-col grow"}>
+          <h3 className={headingStyles + " m-2"}>Relevant Courses</h3>
+          <div className="m-2 w-full grid grid-cols-3 gap-3">{buildClassesGrid()}</div>
+        </div>
+      </section>
+    </Layout>
   );
 }

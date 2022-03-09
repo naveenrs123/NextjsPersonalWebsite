@@ -35,9 +35,9 @@ function buildIcons() {
 
 export default function Footer() {
   return (
-    <footer className="mt-12 bg-slate-900 p-5 flex flex-col items-center">
+    <footer className="mt-12 bg-slate-900 py-8 flex flex-col items-center">
       <div className="mb-5 flex justify-center items-center">{buildIcons()}</div>
-      <p className="">© 2022 Naveen Sivasankar</p>
+      <p className="font-thin">© 2022 Naveen Sivasankar</p>
     </footer>
   );
 }
