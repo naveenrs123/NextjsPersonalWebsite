@@ -1,51 +1,67 @@
 import Image from "next/image";
 import Layout from "../components/Layout";
 
-const pStyles = "mt-6 text-2xl w-9/12 font-light";
-const headingStyles = "mt-8 text-4xl font-bold w-9/12";
-const titleStyles = "mt-8 mb-4 text-7xl font-bold";
+const titleCommon = "mx-4 rounded my-6 w-fit text-3xl font-bold text-center bg-green-900 text-white px-4 py-2";
+const titleResp = "md:text-5xl";
+
+const pCommon = "mx-4 mb-3 text-lg font-light text-center";
+const pResp = "md:text-2xl";
+
+const linkCommon = "font-normal text-amber-700 hover:bg-green-900 hover:text-white hover:px-2";
+const spanCommon = "font-normal text-amber-700";
 
 export default function Home() {
   return (
     <Layout>
-      <div className="relative h-72 w-72">
+      <div className="mt-1 mx-4">
         <Image
-          className="rounded-full "
+          className="rounded"
           priority
-          src="/../public/images/picrew-img.png"
+          src="/images/hellothere.gif"
           alt="Cartoon illustration of Naveen Sivasankar"
-          layout="fill"
-          objectFit="cover"
+          layout="intrinsic"
+          width={480}
+          height={240}
         />
       </div>
 
-      <h1 className={titleStyles}>Hello!</h1>
-      <h2 className={headingStyles}>Background</h2>
-      <p className={pStyles}>
-        I am <strong className="text-red-500">Naveen Sivasankar</strong>, a soon-to-be graduate of the University of
-        British Columbia. I have several years of experience developing{" "}
-        <strong className="text-red-500">full-stack enterprise applications</strong> and even more experience with
-        various academic projects.
+      <h1 className={titleCommon + " " + titleResp}>Naveen Sivasankar</h1>
+
+      <p className={pCommon + " " + pResp}>
+        UBC graduate with a{" "}
+        <a title="Download thesis" href="/docs/thesis.pdf" className={linkCommon} download="thesis.pdf">
+          B.Sc. Honours in Computer Science
+        </a>
+        .
       </p>
-      <p className={pStyles}>
-        My academic and professional experiences have helped me to understand many{" "}
-        <strong className="text-red-500">software development processes</strong> and will allow me to work effectively
-        with others in a professional setting.
+
+      <p className={pCommon + " " + pResp}>
+        Internships at{" "}
+        <a
+          data-tooltip-target="tooltip-animation"
+          title="Go to website"
+          href="https://www.trulioo.com/"
+          className={linkCommon}
+        >
+          Trulioo
+        </a>{" "}
+        and{" "}
+        <a title="Go to website" href="https://www.copperleaf.com/" className={linkCommon}>
+          Copperleaf
+        </a>
+        .
       </p>
-      <h2 className={headingStyles}>Future</h2>
-      <p className={pStyles}>
-        I am still exploring my options but I am excited to work in the fields of{" "}
-        <strong className="text-red-500">full-stack development</strong>,{" "}
-        <strong className="text-red-500">data science</strong>, or{" "}
-        <strong className="text-red-500">cloud computing</strong>. I am also curious about the latest technologies such
-        as <strong className="text-red-500">Web3</strong> and the blockchain.
+
+      <p className={pCommon + " " + pResp}>
+        Interested in <span className={spanCommon}>full-stack software development</span>,{" "}
+        <span className={spanCommon}>programming languages</span>, and{" "}
+        <span className={spanCommon}>distributed systems</span>.
       </p>
-      <h2 className={headingStyles}>Hobbies</h2>
-      <p className={pStyles}>
-        When I am not involved with academics or work, I enjoy{" "}
-        <strong className="text-red-500">exploring new cuisines</strong> by experimenting in the kitchen or exploring
-        the Vancouver restaurant scene. I also <strong className="text-red-500">consume a lot of media</strong>, such as
-        movies and books, and especially enjoy intellectually challenging content.
+
+      <p className={pCommon + " " + pResp}>
+        Amateur <span className={spanCommon}>chef</span>,{" "}
+        <span className={spanCommon}>movie/TV show </span>enthusiast, and self-proclaimed{" "}
+        <span className={spanCommon}>food critic</span>.
       </p>
     </Layout>
   );
