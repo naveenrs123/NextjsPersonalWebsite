@@ -36,7 +36,7 @@ export default function Home() {
       </p>
 
       <p className={pCommon + " " + pResp}>
-        Internships at{" "}
+        Completed internships at{" "}
         <a
           data-tooltip-target="tooltip-animation"
           title="Go to website"
